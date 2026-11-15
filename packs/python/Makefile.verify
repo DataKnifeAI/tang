@@ -1,0 +1,15 @@
+# Tang pack: python — drop targets into your project Makefile (or include this file).
+# When an agent is corrected, add a check here — not a comment.
+
+.PHONY: verify fmt lint test
+
+verify: fmt lint test ## Tang verify gate
+
+fmt: ## ruff format check
+	ruff format --check .
+
+lint: ## ruff lint
+	ruff check .
+
+test: ## pytest
+	pytest -q

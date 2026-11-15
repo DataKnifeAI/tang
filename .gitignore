@@ -1,0 +1,12 @@
+.tang-tmp/
+*.pyc
+__pycache__/
+.venv/
+node_modules/
+target/
+dist/
+.DS_Store
+*.swp
+.env
+.env.*
+!.env.example

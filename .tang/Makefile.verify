@@ -1,0 +1,15 @@
+# Tang pack: shell
+# When an agent is corrected, add a check here — not a comment.
+
+.PHONY: verify lint test
+
+verify: lint test
+
+lint:
+	@export PATH="$(HOME)/.local/bin:$$PATH"; \
+	  command -v shellcheck >/dev/null 2>&1 || { echo "shellcheck required"; exit 1; }; \
+	  find . -type f \( -name '*.sh' -o -path '*/bin/*' \) ! -path './.git/*' ! -path './.tang/*' -print0 \
+	    | xargs -0 -r shellcheck -x
+
+test:
+	@echo "ok: shell pack test placeholder — replace with real script tests"

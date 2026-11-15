@@ -1,0 +1,15 @@
+# Tang pack: rust
+# When an agent is corrected, add a check here — not a comment.
+
+.PHONY: verify fmt lint test
+
+verify: fmt lint test
+
+fmt:
+	cargo fmt --all -- --check
+
+lint:
+	cargo clippy --all-targets --all-features -- -D warnings
+
+test:
+	cargo test --all

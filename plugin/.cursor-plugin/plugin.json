@@ -1,0 +1,13 @@
+{
+  "name": "tang",
+  "displayName": "Tang",
+  "description": "DataKnifeAI agentic foundations: verify-first playbooks, harden-to-lint, feature maps, fleet bootstrap.",
+  "version": "0.1.0",
+  "author": {
+    "name": "DataKnifeAI"
+  },
+  "homepage": "https://github.com/DataKnifeAI/tang",
+  "repository": "https://github.com/DataKnifeAI/tang",
+  "license": "Apache-2.0",
+  "keywords": ["agents", "verify", "lint", "slashbay", "dataknife"]
+}

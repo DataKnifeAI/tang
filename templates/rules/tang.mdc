@@ -1,0 +1,12 @@
+---
+description: Tang verify-first foundations for agent work in this repo
+alwaysApply: true
+---
+
+# Tang
+
+- Prefer deterministic checks (`make verify`, linters, tests) over prose rules or comments.
+- Spend most of the turn on verification evidence after code changes.
+- When you correct the same agent mistake twice, encode it as a lint/CI check (use `tang-harden`).
+- Do not add drive-by markdown, comments, or refactors unrelated to the task.
+- Before claiming done: run `make verify` (or `tang verify`) and report the output.

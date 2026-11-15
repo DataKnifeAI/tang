@@ -1,0 +1,15 @@
+# Tang pack: go
+# When an agent is corrected, add a check here — not a comment.
+
+.PHONY: verify fmt lint test
+
+verify: fmt lint test
+
+fmt:
+	test -z "$$(gofmt -l .)"
+
+lint:
+	golangci-lint run ./...
+
+test:
+	go test ./...

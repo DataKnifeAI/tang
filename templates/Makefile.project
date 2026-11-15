@@ -1,0 +1,11 @@
+# Generated / merged by `tang init` / `tang adopt`. Keep `verify` as the agent gate.
+.DEFAULT_GOAL := help
+
+.PHONY: help verify
+
+help:
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-16s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
+# Tang includes pack verify targets below (or via include).
+verify: ## Agent gate — must pass before done
+	@echo "ok: verify (customize with a Tang language pack)"

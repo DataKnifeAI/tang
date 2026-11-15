@@ -1,0 +1,16 @@
+# Tang pack: node (npm scripts; prefers biome when present)
+# When an agent is corrected, add a check here — not a comment.
+
+.PHONY: verify fmt lint test
+
+verify: fmt lint test
+
+fmt:
+	@if [ -f node_modules/@biomejs/biome/bin/biome ]; then npx biome check .; \
+	elif [ -f node_modules/.bin/eslint ]; then npx eslint .; \
+	else echo "install biome or eslint"; exit 1; fi
+
+lint: fmt
+
+test:
+	npm test
